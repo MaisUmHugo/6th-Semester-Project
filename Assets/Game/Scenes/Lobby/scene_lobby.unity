@@ -265,12 +265,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692f8fbc7341d494c9aa66801bdb1de2, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  connectionPanel: {fileID: 1690314030}
-  lobbyPanel: {fileID: 97037352}
-  hostButton: {fileID: 1661872924}
-  clientButton: {fileID: 1175355755}
-  quitButton: {fileID: 1226996667}
-  statusText: {fileID: 383927642}
+  _connectionPanel: {fileID: 1690314030}
+  _lobbyPanel: {fileID: 97037352}
+  _hostButton: {fileID: 1661872924}
+  _clientButton: {fileID: 1175355755}
+  _quitButton: {fileID: 1226996667}
+  _statusText: {fileID: 383927642}
 --- !u!114 &436354351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,10 +911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd5e47b34c9d9f42a2f051d51d8a3fb, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  selectedScale: 1.04
-  pulseAmount: 0.012
-  pulseSpeed: 2
-  transitionSpeed: 14
+  _selectedScale: 1.04
+  _pulseAmount: 0.012
+  _pulseSpeed: 2
+  _transitionSpeed: 14
 --- !u!114 &1175355753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,10 +1049,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd5e47b34c9d9f42a2f051d51d8a3fb, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  selectedScale: 1.04
-  pulseAmount: 0.012
-  pulseSpeed: 2
-  transitionSpeed: 14
+  _selectedScale: 1.04
+  _pulseAmount: 0.012
+  _pulseSpeed: 2
+  _transitionSpeed: 14
 --- !u!114 &1226996665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,10 +1187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd5e47b34c9d9f42a2f051d51d8a3fb, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  selectedScale: 1.04
-  pulseAmount: 0.012
-  pulseSpeed: 2
-  transitionSpeed: 14
+  _selectedScale: 1.04
+  _pulseAmount: 0.012
+  _pulseSpeed: 2
+  _transitionSpeed: 14
 --- !u!114 &1661872922
 MonoBehaviour:
   m_ObjectHideFlags: 0

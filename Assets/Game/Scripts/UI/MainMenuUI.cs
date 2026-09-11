@@ -5,66 +5,65 @@ using UnityEngine.UI;
 
 namespace PiGame.UI
 {
-    [DisallowMultipleComponent]
-    public sealed class MainMenuUI : MonoBehaviour
+    public class MainMenuUI : MonoBehaviour
     {
         [Header("Panels")]
-        [SerializeField] private GameObject connectionPanel;
-        [SerializeField] private GameObject lobbyPanel;
+        [SerializeField] private GameObject _connectionPanel;
+        [SerializeField] private GameObject _lobbyPanel;
 
         [Header("Connection menu")]
-        [SerializeField] private Button hostButton;
-        [SerializeField] private Button clientButton;
-        [SerializeField] private Button quitButton;
-        [SerializeField] private Text statusText;
+        [SerializeField] private Button _hostButton;
+        [SerializeField] private Button _clientButton;
+        [SerializeField] private Button _quitButton;
+        [SerializeField] private Text _statusText;
 
-        private Coroutine selectionRoutine;
+        private Coroutine _selectionRoutine;
 
         private void Awake()
         {
-            quitButton.onClick.AddListener(QuitGame);
+            _quitButton.onClick.AddListener(QuitGame);
         }
 
         private void OnEnable()
         {
             ShowConnectionPanel();
-            selectionRoutine = StartCoroutine(SelectHostNextFrame());
+            _selectionRoutine = StartCoroutine(SelectHostNextFrame());
         }
 
         private void OnDisable()
         {
-            if (selectionRoutine != null)
+            if (_selectionRoutine != null)
             {
-                StopCoroutine(selectionRoutine);
-                selectionRoutine = null;
+                StopCoroutine(_selectionRoutine);
+                _selectionRoutine = null;
             }
         }
 
         private void OnDestroy()
         {
-            if (quitButton != null)
+            if (_quitButton != null)
             {
-                quitButton.onClick.RemoveListener(QuitGame);
+                _quitButton.onClick.RemoveListener(QuitGame);
             }
         }
 
         public void ShowConnectionPanel()
         {
-            connectionPanel.SetActive(true);
-            lobbyPanel.SetActive(false);
+            _connectionPanel.SetActive(true);
+            _lobbyPanel.SetActive(false);
             SetStatus("ESCOLHA HOST OU CLIENTE");
         }
 
         public void SetStatus(string message)
         {
-            statusText.text = message;
+            _statusText.text = message;
         }
 
         private IEnumerator SelectHostNextFrame()
         {
             yield return null;
-            EventSystem.current?.SetSelectedGameObject(hostButton.gameObject);
-            selectionRoutine = null;
+            EventSystem.current?.SetSelectedGameObject(_hostButton.gameObject);
+            _selectionRoutine = null;
         }
 
         private static void QuitGame()
